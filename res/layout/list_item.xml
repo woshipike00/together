@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listview_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     >
+
+    <ImageView
+        android:id="@+id/arrow_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:background="@drawable/accessory_disclosure" />
+
+    <LinearLayout
+        android:id="@+id/image_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/arrow_star"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:padding="7dp" >
+
+        <TextView
+            android:id="@+id/image"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+             >
+
+            
+
+            <TextView
+                android:id="@+id/sItemInfo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingTop="4dp"
+                android:textColor="@color/white"
+                android:text="info"
+                android:textSize="16dp" />
+            
+            <TextView
+                android:id="@+id/sItemTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/white"
+                android:text="title"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

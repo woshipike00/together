@@ -1,0 +1,1 @@
+package com.example.together;import android.app.Activity;public class SettingsActivity extends Activity{}
