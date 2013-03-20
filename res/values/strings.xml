@@ -30,11 +30,13 @@
     <string name="register_password">密码:</string>
     <string name="register_confirm">确认密码:</string>
     <string name="register_name">用户名:</string>
-     <string name="register_account">手机号/账户名:</string>
     <string name="register_register">注册</string>
     <string name="_loading">加载中</string>
-    
-    
+    <string name="send_message_title">发请求</string>
+    <string name="place">地点</string>
+    <string name="time">时间</string>
+    <string name="event">活动</string>
+    <string name="my_event">自拟活动</string>
     <string name="pull_to_refresh_pull_label">下拉以刷新</string>
     <string name="pull_to_refresh_release_label">松开以刷新</string>
     <string name="pull_to_refresh_refreshing_label">载入中</string>
@@ -49,4 +51,6 @@
     <string name="nearby">附件用户</string>
     <string name="send_by">我发送的</string>
     <string name="followed_by">跟踪我的</string>
+    <string name="follow_me">Following</string>
+    <string name="followed">Followed</string>
 </resources>

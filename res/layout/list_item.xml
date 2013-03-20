@@ -15,7 +15,6 @@
         android:background="@drawable/accessory_disclosure" />
 
     <LinearLayout
-        android:id="@+id/image_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/arrow_star"
@@ -24,7 +23,7 @@
         android:padding="7dp" >
 
         <TextView
-            android:id="@+id/image"
+            android:id="@+id/sItemTime"
             android:layout_width="120dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
