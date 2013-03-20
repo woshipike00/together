@@ -50,7 +50,16 @@
     
     <string name="nearby">附件用户</string>
     <string name="send_by">我发送的</string>
-    <string name="followed_by">跟踪我的</string>
+    <string name="followed_by">我跟踪的</string>
     <string name="follow_me">Following</string>
     <string name="followed">Followed</string>
+    
+    <string name="set_settings">个性设置</string>
+    <string name="save">保存</string>
+    <string name="max_visible">最大可视范围</string>
+    <string name="fav_events">我感兴趣的话题</string>
+    <string name="film">电影</string>
+    <string name="concert">演唱会</string>
+    <string name="eating">吃饭</string>
+    <string name="singing">唱歌</string>
 </resources>

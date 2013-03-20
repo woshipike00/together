@@ -71,7 +71,11 @@ public final class R {
     }
     public static final class id {
         public static final int arrow_star=0x7f0a0007;
-        public static final int bodylayout=0x7f0a0023;
+        public static final int bodylayout=0x7f0a0027;
+        public static final int checkBox_concert=0x7f0a0022;
+        public static final int checkBox_eating=0x7f0a0023;
+        public static final int checkBox_film=0x7f0a0021;
+        public static final int checkBox_singing=0x7f0a0024;
         public static final int event_spinner=0x7f0a001f;
         public static final int follow_text=0x7f0a0012;
         public static final int image_layout=0x7f0a0003;
@@ -82,7 +86,7 @@ public final class R {
         public static final int login_login=0x7f0a000d;
         public static final int login_password=0x7f0a000c;
         public static final int login_register=0x7f0a000e;
-        public static final int menu_settings=0x7f0a0029;
+        public static final int menu_settings=0x7f0a002d;
         public static final int message_in_follow=0x7f0a0000;
         public static final int myFollowedText=0x7f0a0010;
         public static final int mySendText=0x7f0a000f;
@@ -98,20 +102,20 @@ public final class R {
         public static final int register_confirm_text=0x7f0a001a;
         public static final int register_name_text=0x7f0a0018;
         public static final int register_password_text=0x7f0a0019;
-        public static final int roots=0x7f0a0021;
+        public static final int roots=0x7f0a0025;
         public static final int sItemInfo=0x7f0a0009;
         public static final int sItemTime=0x7f0a0008;
         public static final int sItemTitle=0x7f0a0004;
         public static final int sendMessageText=0x7f0a001c;
         public static final int sendText=0x7f0a0005;
-        public static final int tab_column_layout=0x7f0a0027;
-        public static final int tab_layout=0x7f0a0024;
-        public static final int tab_main_layout=0x7f0a0025;
-        public static final int tab_more_layout=0x7f0a0028;
-        public static final int tab_star_layout=0x7f0a0026;
+        public static final int tab_column_layout=0x7f0a002b;
+        public static final int tab_layout=0x7f0a0028;
+        public static final int tab_main_layout=0x7f0a0029;
+        public static final int tab_more_layout=0x7f0a002c;
+        public static final int tab_star_layout=0x7f0a002a;
         public static final int time_edit=0x7f0a001e;
         public static final int usernameText=0x7f0a0006;
-        public static final int video_layout=0x7f0a0022;
+        public static final int video_layout=0x7f0a0026;
     }
     public static final class layout {
         public static final int follow_message=0x7f030000;
@@ -136,7 +140,11 @@ public final class R {
         public static final int _loading=0x7f07001f;
         public static final int _more=0x7f07002b;
         public static final int app_name=0x7f070000;
+        public static final int concert=0x7f070037;
+        public static final int eating=0x7f070038;
         public static final int event=0x7f070023;
+        public static final int fav_events=0x7f070035;
+        public static final int film=0x7f070036;
         public static final int follow_me=0x7f070030;
         public static final int followed=0x7f070031;
         public static final int followed_by=0x7f07002f;
@@ -151,6 +159,7 @@ public final class R {
         public static final int login_miss_username=0x7f070013;
         public static final int login_succ=0x7f070011;
         public static final int logout=0x7f07000f;
+        public static final int max_visible=0x7f070034;
         public static final int menu_settings=0x7f070002;
         public static final int miss_sdcard=0x7f070008;
         public static final int msg=0x7f07000c;
@@ -173,11 +182,14 @@ public final class R {
         public static final int register_password=0x7f07001b;
         public static final int register_register=0x7f07001e;
         public static final int register_title=0x7f070019;
+        public static final int save=0x7f070033;
         public static final int sdcard_can_write=0x7f070009;
         public static final int send=0x7f070029;
         public static final int send_by=0x7f07002e;
         public static final int send_message_title=0x7f070020;
+        public static final int set_settings=0x7f070032;
         public static final int settings=0x7f07000e;
+        public static final int singing=0x7f070039;
         public static final int time=0x7f070022;
         public static final int title_activity_main=0x7f070003;
         public static final int update=0x7f070018;

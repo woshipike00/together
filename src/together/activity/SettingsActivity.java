@@ -1,1 +1,1 @@
-package together.activity;import android.app.Activity;public class SettingsActivity extends Activity{}
+package together.activity;import android.app.Activity;import android.content.Context;import android.content.pm.ActivityInfo;import android.os.Bundle;public class SettingsActivity extends Activity{	Context context;	public void onCreate(Bundle savedInstanceState) {		super.onCreate(savedInstanceState);		setContentView(R.layout.settings);		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);		context = this;	}}
