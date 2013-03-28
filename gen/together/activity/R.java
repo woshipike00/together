@@ -21,151 +21,34 @@ public final class R {
         public static final int zoom_out_exit=0x7f040009;
     }
     public static final class attr {
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int cameraBearing=0x7f010001;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int cameraTargetLat=0x7f010002;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int cameraTargetLng=0x7f010003;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int cameraTilt=0x7f010004;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int cameraZoom=0x7f010005;
-        /** <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>normal</code></td><td>1</td><td></td></tr>
-<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
-<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
-</table>
-         */
-        public static final int mapType=0x7f010000;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int uiCompass=0x7f010006;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int uiRotateGestures=0x7f010007;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int uiScrollGestures=0x7f010008;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int uiTiltGestures=0x7f010009;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int uiZoomControls=0x7f01000a;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int uiZoomGestures=0x7f01000b;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int useViewLifecycle=0x7f01000c;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int zOrderOnTop=0x7f01000d;
     }
     public static final class color {
-        public static final int TextColor=0x7f070013;
-        public static final int bgColor=0x7f070014;
-        public static final int black=0x7f070009;
-        public static final int blue=0x7f070010;
-        public static final int blueviolet=0x7f070012;
-        public static final int buttonRed=0x7f07000a;
-        public static final int dark_red=0x7f07000d;
-        public static final int dim_gray=0x7f070006;
-        public static final int gray=0x7f070004;
-        public static final int green=0x7f07000f;
-        public static final int light_gray=0x7f070007;
-        public static final int light_red=0x7f07000e;
-        public static final int listTitle=0x7f070001;
-        public static final int logout_color=0x7f070011;
-        public static final int red=0x7f07000b;
-        public static final int red2=0x7f07000c;
-        public static final int region=0x7f070000;
-        public static final int smoke_gray=0x7f070005;
-        public static final int text=0x7f070002;
-        public static final int white=0x7f070003;
-        public static final int whitesmoke=0x7f070008;
+        public static final int TextColor=0x7f050013;
+        public static final int bgColor=0x7f050014;
+        public static final int black=0x7f050009;
+        public static final int blue=0x7f050010;
+        public static final int blueviolet=0x7f050012;
+        public static final int buttonRed=0x7f05000a;
+        public static final int dark_red=0x7f05000d;
+        public static final int dim_gray=0x7f050006;
+        public static final int gray=0x7f050004;
+        public static final int green=0x7f05000f;
+        public static final int light_gray=0x7f050007;
+        public static final int light_red=0x7f05000e;
+        public static final int listTitle=0x7f050001;
+        public static final int logout_color=0x7f050011;
+        public static final int red=0x7f05000b;
+        public static final int red2=0x7f05000c;
+        public static final int region=0x7f050000;
+        public static final int smoke_gray=0x7f050005;
+        public static final int text=0x7f050002;
+        public static final int white=0x7f050003;
+        public static final int whitesmoke=0x7f050008;
     }
     public static final class dimen {
-        public static final int padding_large=0x7f080002;
-        public static final int padding_medium=0x7f080001;
-        public static final int padding_small=0x7f080000;
+        public static final int padding_large=0x7f060002;
+        public static final int padding_medium=0x7f060001;
+        public static final int padding_small=0x7f060000;
     }
     public static final class drawable {
         public static final int accessory_disclosure=0x7f020000;
@@ -187,58 +70,54 @@ containing a value of this type.
         public static final int tab=0x7f020010;
     }
     public static final class id {
-        public static final int arrow_star=0x7f05000c;
-        public static final int bodylayout=0x7f05002d;
-        public static final int checkBox_concert=0x7f050028;
-        public static final int checkBox_eating=0x7f050029;
-        public static final int checkBox_film=0x7f050027;
-        public static final int checkBox_singing=0x7f05002a;
-        public static final int event_spinner=0x7f050025;
-        public static final int follow_text=0x7f050017;
-        public static final int image_layout=0x7f050008;
-        public static final int listview_item=0x7f050007;
-        public static final int loadMoreButton=0x7f05000f;
-        public static final int loginText=0x7f050006;
-        public static final int login_account=0x7f050010;
-        public static final int login_login=0x7f050012;
-        public static final int login_password=0x7f050011;
-        public static final int login_register=0x7f050013;
-        public static final int map=0x7f050005;
-        public static final int map1=0x7f050018;
-        public static final int menu_settings=0x7f050033;
-        public static final int message_in_follow=0x7f050004;
-        public static final int myFollowedText=0x7f050015;
-        public static final int mySendText=0x7f050014;
-        public static final int my_event_edit=0x7f050026;
-        public static final int none=0x7f050000;
-        public static final int normal=0x7f050001;
-        public static final int place_edit=0x7f050023;
-        public static final int post_text=0x7f050016;
-        public static final int pull_to_refresh_header=0x7f050019;
-        public static final int pull_to_refresh_image=0x7f05001b;
-        public static final int pull_to_refresh_progress=0x7f05001a;
-        public static final int pull_to_refresh_text=0x7f05001c;
-        public static final int pull_to_refresh_updated_at=0x7f05001d;
-        public static final int register_btn=0x7f050021;
-        public static final int register_confirm_text=0x7f050020;
-        public static final int register_name_text=0x7f05001e;
-        public static final int register_password_text=0x7f05001f;
-        public static final int roots=0x7f05002b;
-        public static final int sItemInfo=0x7f05000e;
-        public static final int sItemTime=0x7f05000d;
-        public static final int sItemTitle=0x7f050009;
-        public static final int satellite=0x7f050002;
-        public static final int sendMessageText=0x7f050022;
-        public static final int sendText=0x7f05000a;
-        public static final int tab_column_layout=0x7f050031;
-        public static final int tab_layout=0x7f05002e;
-        public static final int tab_main_layout=0x7f05002f;
-        public static final int tab_more_layout=0x7f050032;
-        public static final int tab_star_layout=0x7f050030;
-        public static final int terrain=0x7f050003;
-        public static final int time_edit=0x7f050024;
-        public static final int usernameText=0x7f05000b;
-        public static final int video_layout=0x7f05002c;
+        public static final int arrow_star=0x7f0a0008;
+        public static final int bodylayout=0x7f0a0029;
+        public static final int checkBox_concert=0x7f0a0024;
+        public static final int checkBox_eating=0x7f0a0025;
+        public static final int checkBox_film=0x7f0a0023;
+        public static final int checkBox_singing=0x7f0a0026;
+        public static final int event_spinner=0x7f0a0021;
+        public static final int follow_text=0x7f0a0013;
+        public static final int followmap=0x7f0a0001;
+        public static final int image_layout=0x7f0a0004;
+        public static final int listview_item=0x7f0a0003;
+        public static final int loadMoreButton=0x7f0a000b;
+        public static final int loginText=0x7f0a0002;
+        public static final int login_account=0x7f0a000c;
+        public static final int login_login=0x7f0a000e;
+        public static final int login_password=0x7f0a000d;
+        public static final int login_register=0x7f0a000f;
+        public static final int menu_settings=0x7f0a002f;
+        public static final int message_in_follow=0x7f0a0000;
+        public static final int myFollowedText=0x7f0a0011;
+        public static final int mySendText=0x7f0a0010;
+        public static final int my_event_edit=0x7f0a0022;
+        public static final int place_edit=0x7f0a001f;
+        public static final int post_text=0x7f0a0012;
+        public static final int postmap=0x7f0a0014;
+        public static final int pull_to_refresh_header=0x7f0a0015;
+        public static final int pull_to_refresh_image=0x7f0a0017;
+        public static final int pull_to_refresh_progress=0x7f0a0016;
+        public static final int pull_to_refresh_text=0x7f0a0018;
+        public static final int pull_to_refresh_updated_at=0x7f0a0019;
+        public static final int register_btn=0x7f0a001d;
+        public static final int register_confirm_text=0x7f0a001c;
+        public static final int register_name_text=0x7f0a001a;
+        public static final int register_password_text=0x7f0a001b;
+        public static final int roots=0x7f0a0027;
+        public static final int sItemInfo=0x7f0a000a;
+        public static final int sItemTime=0x7f0a0009;
+        public static final int sItemTitle=0x7f0a0005;
+        public static final int sendMessageText=0x7f0a001e;
+        public static final int sendText=0x7f0a0006;
+        public static final int tab_column_layout=0x7f0a002d;
+        public static final int tab_layout=0x7f0a002a;
+        public static final int tab_main_layout=0x7f0a002b;
+        public static final int tab_more_layout=0x7f0a002e;
+        public static final int tab_star_layout=0x7f0a002c;
+        public static final int time_edit=0x7f0a0020;
+        public static final int usernameText=0x7f0a0007;
+        public static final int video_layout=0x7f0a0028;
     }
     public static final class layout {
         public static final int follow_message=0x7f030000;
@@ -257,357 +136,69 @@ containing a value of this type.
         public static final int tab=0x7f03000d;
     }
     public static final class menu {
-        public static final int activity_main=0x7f0a0000;
+        public static final int activity_main=0x7f090000;
     }
     public static final class string {
-        public static final int _loading=0x7f06002a;
-        public static final int _more=0x7f060036;
-        public static final int app_name=0x7f06000b;
-        /**  Button in confirmation dialog to enable Google Play services.  Clicking it
-        will direct user to application settings of Google Play services where they
-        can enable it [CHAR LIMIT=30] 
-         */
-        public static final int common_google_play_services_enable_button=0x7f060006;
-        /**  Message in confirmation dialog informing user they need to enable
-        Google Play services in application settings [CHAR LIMIT=NONE] 
-         */
-        public static final int common_google_play_services_enable_text=0x7f060005;
-        /**  Title of confirmation dialog informing user they need to enable
-        Google Play services in application settings [CHAR LIMIT=40] 
-         */
-        public static final int common_google_play_services_enable_title=0x7f060004;
-        /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=30] 
-         */
-        public static final int common_google_play_services_install_button=0x7f060003;
-        /**  (For phones) Message in confirmation dialog informing user that
-        they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
-         */
-        public static final int common_google_play_services_install_text_phone=0x7f060001;
-        /**  (For tablets) Message in confirmation dialog informing user that
-        they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
-         */
-        public static final int common_google_play_services_install_text_tablet=0x7f060002;
-        /**  Title of confirmation dialog informing user that they need to install
-        Google Play services (from Play Store) [CHAR LIMIT=40] 
-         */
-        public static final int common_google_play_services_install_title=0x7f060000;
-        /**  Message in confirmation dialog informing user there is an unknow issue in Google Player
-        services [CHAR LIMIT=NONE] 
-         */
-        public static final int common_google_play_services_unknown_issue=0x7f060009;
-        /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=20] 
-         */
-        public static final int common_google_play_services_update_button=0x7f06000a;
-        /**  Message in confirmation dialog informing user that they need to update
-        Google Play services (from Play Store) [CHAR LIMIT=NONE] 
-         */
-        public static final int common_google_play_services_update_text=0x7f060008;
-        /**  Title of confirmation dialog informing user that they need to update
-        Google Play services (from Play Store) [CHAR LIMIT=40] 
-         */
-        public static final int common_google_play_services_update_title=0x7f060007;
-        public static final int concert=0x7f060042;
-        public static final int eating=0x7f060043;
-        public static final int event=0x7f06002e;
-        public static final int fav_events=0x7f060040;
-        public static final int film=0x7f060041;
-        public static final int follow_me=0x7f06003b;
-        public static final int followed=0x7f06003c;
-        public static final int followed_by=0x7f06003a;
-        public static final int friend=0x7f060018;
-        public static final int hello_world=0x7f06000c;
-        public static final int home=0x7f060016;
-        public static final int login=0x7f06001b;
-        public static final int login_confirm_fail=0x7f060021;
-        public static final int login_fail=0x7f060022;
-        public static final int login_miss_confirm=0x7f060020;
-        public static final int login_miss_password=0x7f06001f;
-        public static final int login_miss_username=0x7f06001e;
-        public static final int login_succ=0x7f06001c;
-        public static final int logout=0x7f06001a;
-        public static final int max_visible=0x7f06003f;
-        public static final int menu_settings=0x7f06000d;
-        public static final int miss_sdcard=0x7f060013;
-        public static final int msg=0x7f060017;
-        public static final int music_exit=0x7f060011;
-        public static final int music_negative_btn=0x7f060010;
-        public static final int music_positive_btn=0x7f06000f;
-        public static final int music_sure_exit=0x7f060012;
-        public static final int my_event=0x7f06002f;
-        public static final int nearby=0x7f060038;
-        public static final int network_failed=0x7f060015;
-        public static final int no_more=0x7f060037;
-        public static final int place=0x7f06002c;
-        public static final int pull_to_refresh_pull_label=0x7f060030;
-        public static final int pull_to_refresh_refreshing_label=0x7f060032;
-        public static final int pull_to_refresh_release_label=0x7f060031;
-        public static final int pull_to_refresh_tap_label=0x7f060033;
-        public static final int register_confirm=0x7f060027;
-        public static final int register_fail=0x7f060025;
-        public static final int register_name=0x7f060028;
-        public static final int register_password=0x7f060026;
-        public static final int register_register=0x7f060029;
-        public static final int register_title=0x7f060024;
-        public static final int save=0x7f06003e;
-        public static final int sdcard_can_write=0x7f060014;
-        public static final int send=0x7f060034;
-        public static final int send_by=0x7f060039;
-        public static final int send_message_title=0x7f06002b;
-        public static final int set_settings=0x7f06003d;
-        public static final int settings=0x7f060019;
-        public static final int singing=0x7f060044;
-        public static final int time=0x7f06002d;
-        public static final int title_activity_main=0x7f06000e;
-        public static final int update=0x7f060023;
-        public static final int user=0x7f060035;
-        public static final int user_get_failure=0x7f06001d;
+        public static final int _loading=0x7f07001f;
+        public static final int _more=0x7f07002b;
+        public static final int app_name=0x7f070000;
+        public static final int concert=0x7f070037;
+        public static final int eating=0x7f070038;
+        public static final int event=0x7f070023;
+        public static final int fav_events=0x7f070035;
+        public static final int film=0x7f070036;
+        public static final int follow_me=0x7f070030;
+        public static final int followed=0x7f070031;
+        public static final int followed_by=0x7f07002f;
+        public static final int friend=0x7f07000d;
+        public static final int hello_world=0x7f070001;
+        public static final int home=0x7f07000b;
+        public static final int login=0x7f070010;
+        public static final int login_confirm_fail=0x7f070016;
+        public static final int login_fail=0x7f070017;
+        public static final int login_miss_confirm=0x7f070015;
+        public static final int login_miss_password=0x7f070014;
+        public static final int login_miss_username=0x7f070013;
+        public static final int login_succ=0x7f070011;
+        public static final int logout=0x7f07000f;
+        public static final int max_visible=0x7f070034;
+        public static final int menu_settings=0x7f070002;
+        public static final int miss_sdcard=0x7f070008;
+        public static final int msg=0x7f07000c;
+        public static final int music_exit=0x7f070006;
+        public static final int music_negative_btn=0x7f070005;
+        public static final int music_positive_btn=0x7f070004;
+        public static final int music_sure_exit=0x7f070007;
+        public static final int my_event=0x7f070024;
+        public static final int nearby=0x7f07002d;
+        public static final int network_failed=0x7f07000a;
+        public static final int no_more=0x7f07002c;
+        public static final int place=0x7f070021;
+        public static final int pull_to_refresh_pull_label=0x7f070025;
+        public static final int pull_to_refresh_refreshing_label=0x7f070027;
+        public static final int pull_to_refresh_release_label=0x7f070026;
+        public static final int pull_to_refresh_tap_label=0x7f070028;
+        public static final int register_confirm=0x7f07001c;
+        public static final int register_fail=0x7f07001a;
+        public static final int register_name=0x7f07001d;
+        public static final int register_password=0x7f07001b;
+        public static final int register_register=0x7f07001e;
+        public static final int register_title=0x7f070019;
+        public static final int save=0x7f070033;
+        public static final int sdcard_can_write=0x7f070009;
+        public static final int send=0x7f070029;
+        public static final int send_by=0x7f07002e;
+        public static final int send_message_title=0x7f070020;
+        public static final int set_settings=0x7f070032;
+        public static final int settings=0x7f07000e;
+        public static final int singing=0x7f070039;
+        public static final int time=0x7f070022;
+        public static final int title_activity_main=0x7f070003;
+        public static final int update=0x7f070018;
+        public static final int user=0x7f07002a;
+        public static final int user_get_failure=0x7f070012;
     }
     public static final class style {
-        public static final int AppTheme=0x7f090000;
+        public static final int AppTheme=0x7f080000;
     }
-    public static final class styleable {
-        /** Attributes that can be used with a MapAttrs.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MapAttrs_cameraBearing together.activity:cameraBearing}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLat together.activity:cameraTargetLat}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTargetLng together.activity:cameraTargetLng}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraTilt together.activity:cameraTilt}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_cameraZoom together.activity:cameraZoom}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_mapType together.activity:mapType}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiCompass together.activity:uiCompass}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiRotateGestures together.activity:uiRotateGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiScrollGestures together.activity:uiScrollGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiTiltGestures together.activity:uiTiltGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomControls together.activity:uiZoomControls}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_uiZoomGestures together.activity:uiZoomGestures}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_useViewLifecycle together.activity:useViewLifecycle}</code></td><td></td></tr>
-           <tr><td><code>{@link #MapAttrs_zOrderOnTop together.activity:zOrderOnTop}</code></td><td></td></tr>
-           </table>
-           @see #MapAttrs_cameraBearing
-           @see #MapAttrs_cameraTargetLat
-           @see #MapAttrs_cameraTargetLng
-           @see #MapAttrs_cameraTilt
-           @see #MapAttrs_cameraZoom
-           @see #MapAttrs_mapType
-           @see #MapAttrs_uiCompass
-           @see #MapAttrs_uiRotateGestures
-           @see #MapAttrs_uiScrollGestures
-           @see #MapAttrs_uiTiltGestures
-           @see #MapAttrs_uiZoomControls
-           @see #MapAttrs_uiZoomGestures
-           @see #MapAttrs_useViewLifecycle
-           @see #MapAttrs_zOrderOnTop
-         */
-        public static final int[] MapAttrs = {
-            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
-            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
-            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
-            0x7f01000c, 0x7f01000d
-        };
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#cameraBearing}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:cameraBearing
-        */
-        public static final int MapAttrs_cameraBearing = 1;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#cameraTargetLat}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:cameraTargetLat
-        */
-        public static final int MapAttrs_cameraTargetLat = 2;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#cameraTargetLng}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:cameraTargetLng
-        */
-        public static final int MapAttrs_cameraTargetLng = 3;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#cameraTilt}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:cameraTilt
-        */
-        public static final int MapAttrs_cameraTilt = 4;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#cameraZoom}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:cameraZoom
-        */
-        public static final int MapAttrs_cameraZoom = 5;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#mapType}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>normal</code></td><td>1</td><td></td></tr>
-<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
-<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
-</table>
-          @attr name android:mapType
-        */
-        public static final int MapAttrs_mapType = 0;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#uiCompass}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:uiCompass
-        */
-        public static final int MapAttrs_uiCompass = 6;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#uiRotateGestures}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:uiRotateGestures
-        */
-        public static final int MapAttrs_uiRotateGestures = 7;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#uiScrollGestures}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:uiScrollGestures
-        */
-        public static final int MapAttrs_uiScrollGestures = 8;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#uiTiltGestures}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:uiTiltGestures
-        */
-        public static final int MapAttrs_uiTiltGestures = 9;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#uiZoomControls}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:uiZoomControls
-        */
-        public static final int MapAttrs_uiZoomControls = 10;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#uiZoomGestures}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:uiZoomGestures
-        */
-        public static final int MapAttrs_uiZoomGestures = 11;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#useViewLifecycle}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:useViewLifecycle
-        */
-        public static final int MapAttrs_useViewLifecycle = 12;
-        /**
-          <p>This symbol is the offset where the {@link together.activity.R.attr#zOrderOnTop}
-          attribute's value can be found in the {@link #MapAttrs} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:zOrderOnTop
-        */
-        public static final int MapAttrs_zOrderOnTop = 13;
-    };
 }

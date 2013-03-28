@@ -9,6 +9,6 @@ package together.activity;
 
 public final class Manifest {
     public static final class permission {
-        public static final String MAPS_RECEIVE="together.activity.permission.MAPS_RECEIVE";
+        public static final String BAIDU_LOCATION_SERVICE="android.permission.BAIDU_LOCATION_SERVICE";
     }
 }
