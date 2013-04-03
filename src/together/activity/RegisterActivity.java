@@ -7,20 +7,14 @@
 package together.activity;
  
 
-import org.json.JSONException;
- 
-
 import together.utils.MyConstants;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -47,20 +41,7 @@ public class RegisterActivity extends Activity {
 	private Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
-			case MyConstants.MSG_SUCCESS1:
-//				Intent intent = new Intent(RegisterActivity.this,
-//						AccountActivity.class);
-//				User u = (User) msg.obj;
-//				intent.putExtra("uid", u.getUid());
-//				intent.putExtra("nickname", u.getNickname());
-//				intent.putExtra("gender", u.getGender());
-//				intent.putExtra("location", u.getLocation());
-//				intent.putExtra("avatar", u.getAvatar());
-//				intent.putExtra("integrity", u.getIntegrity());
-//				intent.putExtra("point", u.getPoint());
-//				intent.putExtra("uname", u.getUname());
-//				startActivity(intent);
-//				finish();
+			case MyConstants.MSG_SUCCESS1: 
 				break;
 			case MyConstants.MSG_FAILURE:
 				String str = (String) msg.obj;
@@ -77,8 +58,7 @@ public class RegisterActivity extends Activity {
 		setContentView(R.layout.register);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		context = this;
-//		back = (ImageButton) findViewById(R.id.register_back);
-		register = (TextView) findViewById(R.id.register_btn);
+ 		register = (TextView) findViewById(R.id.register_btn);
 		name = (EditText) findViewById(R.id.register_name_text);
 		pwd = (EditText) findViewById(R.id.register_password_text);
 		confirm = (EditText) findViewById(R.id.register_confirm_text);
@@ -142,51 +122,7 @@ public class RegisterActivity extends Activity {
 	}
 
 	private void register(final String name1, final String pwd1) {
-//		new Thread() {
-//			public void run() {
-//				MyHttpPost p = new MyHttpPost();
-//				String urls = MyConstants.SITE_PORT
-//						+ "/api/registerUser.action?uname=" + name1.trim()
-//						+ "&pwd=" + pwd1.trim() + "&plat=in";
-//				p.noparameterHttp(urls);
-//				String response = p.doPost();
-//				JsonHandler jsonHandler = new JsonHandler();
-//				if (response != null) {
-//					String[] strs = response.split("\"");
-//					if (strs.length > 7) {
-//						if (strs[1].equals("errorCode")) {
-//							handler.obtainMessage(MyConstants.MSG_FAILURE,
-//									strs[7]).sendToTarget();
-//							progressDialogFirstTime.cancel();
-//							return;
-//						} else {
-//							try {
-//								User u = jsonHandler.getUser(response);
-//								// System.out.println("res="+response);
-//								handler.obtainMessage(MyConstants.MSG_SUCCESS1,
-//										u).sendToTarget();
-//								progressDialogFirstTime.cancel();
-//							} catch (JSONException e) {
-//								e.printStackTrace();
-//								progressDialogFirstTime.cancel();
-//								handler.obtainMessage(MyConstants.MSG_FAILURE,
-//										strs[7]).sendToTarget();
-//							}
-//						}
-//					} else {
-//						progressDialogFirstTime.cancel();
-//						handler.obtainMessage(MyConstants.MSG_FAILURE, strs[7])
-//								.sendToTarget();
-//					}
-//				} else {
-//					progressDialogFirstTime.cancel();
-//					Log.e("ee", "null response exception");
-//					handler.obtainMessage(MyConstants.MSG_FAILURE, "")
-//							.sendToTarget();
-//				}
-//
-//			}
-//		}.start();
+//		 
 	}
 
 }
