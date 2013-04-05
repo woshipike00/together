@@ -118,9 +118,9 @@ public class JsonHandler {
 		JSONArray array = object.getJSONArray("star");
 		int length = array.length();
 		for (int i = 0; i < length; i++) {
-			JSONObject object1 = array.getJSONObject(i);
-			String obj2 = object1.getString("star");
-			JSONObject obj = new JSONObject(obj2);
+//			JSONObject object1 = array.getJSONObject(i);
+//			String obj2 = object1.getString("star");
+			JSONObject obj = new JSONObject(array.getJSONObject(i).getString("star"));
 			msg = new MessagePost();
 			msg.setEvent(obj.getString("event"));
 			msg.setId(obj.getString("id"));
