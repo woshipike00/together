@@ -43,10 +43,10 @@
     <string name="register_register">注册</string>
     <string name="_loading">加载中</string>
     <string name="send_message_title">发请求</string>
-    <string name="place">地点</string>
-    <string name="time">时间</string>
-    <string name="event">活动</string>
-    <string name="my_event">自拟活动</string>
+    <string name="event_place">地点</string>
+    <string name="event_time">时间</string>
+    <string name="event_type">类型</string>
+    <string name="event_descritption">描述</string>
     <string name="pull_to_refresh_pull_label">下拉以刷新</string>
     <string name="pull_to_refresh_release_label">松开以刷新</string>
     <string name="pull_to_refresh_refreshing_label">载入中</string>

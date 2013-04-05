@@ -19,12 +19,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import together.models.MessagePost;
+import together.models.EventMsg;
 
 public class JsonHandler {
 	 
-	private List<MessagePost> msgs;
-	private MessagePost msg;
+	private List<EventMsg> msgs;
+	private EventMsg msg;
 
 	 
 	/**
@@ -44,8 +44,8 @@ public class JsonHandler {
 	 * @throws JSONException
 	 * */
 	 
-	public List<MessagePost> getMessages(String json) throws JSONException {
-		msgs = new ArrayList<MessagePost>();
+	public List<EventMsg> getMessages(String json) throws JSONException {
+		msgs = new ArrayList<EventMsg>();
 		JSONObject object = new JSONObject("{\"star\":" + json + "}");
 		JSONArray array = object.getJSONArray("star");
 		int length = array.length();
@@ -53,7 +53,7 @@ public class JsonHandler {
 //			JSONObject object1 = array.getJSONObject(i);
 //			String obj2 = object1.getString("star");
 			JSONObject obj = new JSONObject(array.getJSONObject(i).getString("star"));
-			msg = new MessagePost();
+			msg = new EventMsg();
 			msg.setEvent(obj.getString("event"));
 			msg.setId(obj.getString("id"));
 			msg.setName(obj.getString("name"));
