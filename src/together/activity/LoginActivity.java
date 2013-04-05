@@ -8,17 +8,9 @@
 package together.activity;
  
 
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-import org.json.JSONException;
- 
 
 import together.utils.MyConstants;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -33,19 +25,16 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	private Context context;
- 	private TextView login;
-	private TextView sina;
-	private TextView tecent;
+ 	private TextView login; 
 	private TextView register;
 	private EditText name;
 	private EditText pwd;
-	private ProgressDialog progressDialogFirstTime;
+	private ProgressDialog progressDialog;
 
  	private SharedPreferences preferences;
 	private SharedPreferences.Editor editor;
@@ -72,10 +61,10 @@ public class LoginActivity extends Activity {
 		register = (TextView) findViewById(R.id.login_register);
 		name = (EditText) findViewById(R.id.login_account);
 		pwd = (EditText) findViewById(R.id.login_password); 
-		progressDialogFirstTime = new ProgressDialog(context);
-		progressDialogFirstTime.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialogFirstTime.setIcon(R.drawable.loading);
-		progressDialogFirstTime.setMessage(getString(R.string._loading));
+		progressDialog = new ProgressDialog(context);
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog.setIcon(R.drawable.loading);
+		progressDialog.setMessage(getString(R.string._loading));
 	}
 
 	private void setClickListener() {
@@ -108,21 +97,21 @@ public class LoginActivity extends Activity {
 		String pwd_str = pwd.getText().toString();
 		if (name_str == null || name_str.trim().equals("")) {
 			name.startAnimation(shakeAnim);
-			progressDialogFirstTime.cancel();
+			progressDialog.cancel();
 			Toast.makeText(LoginActivity.this, R.string.login_miss_username,
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
 		if (pwd_str == null || pwd_str.trim().equals("")) {
 			pwd.startAnimation(shakeAnim);
-			progressDialogFirstTime.cancel();
+			progressDialog.cancel();
 			Toast.makeText(LoginActivity.this, R.string.login_miss_password,
 					Toast.LENGTH_SHORT).show();
 			return;
 		}
 		final String name1 = name_str.trim();
 		final String pwd1 = pwd_str.trim();
-		progressDialogFirstTime.show();
+		progressDialog.show();
 		loginVarify(name1, pwd1);
 	}
 
@@ -181,7 +170,7 @@ public class LoginActivity extends Activity {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case MyConstants.MSG_SUCCESS1:
-				progressDialogFirstTime.cancel();
+				progressDialog.cancel();
 				File f = new File(MyConstants.ROOTDIR + "names.txt");
 				if (f.exists())
 					f.delete();
@@ -218,7 +207,7 @@ public class LoginActivity extends Activity {
 //				}
 				break;
 			case MyConstants.MSG_FAILURE:
-				progressDialogFirstTime.cancel();
+				progressDialog.cancel();
 				String str = (String) msg.obj;
 				Toast.makeText(LoginActivity.this,
 						getString(R.string.login_fail) + " " + str,

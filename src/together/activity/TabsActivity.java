@@ -123,15 +123,11 @@ public class TabsActivity extends ActivityGroup {
 			return true;
 		} else
 			return super.onKeyDown(keyCode, event);
-
 	}
     
     private void initUI() {
 		setContentView(R.layout.tab);
-		root = (RelativeLayout) findViewById(R.id.roots);
-//		root.setBackgroundResource(R.drawable.default2x);
- 
-		 
+		root = (RelativeLayout) findViewById(R.id.roots); 		 
 		bodylayout = (LinearLayout) findViewById(R.id.bodylayout);
 
 		tabMain = (LinearLayout) findViewById(R.id.tab_main_layout);
@@ -176,10 +172,7 @@ public class TabsActivity extends ActivityGroup {
 				current = R.id.tab_star_layout;
 				getLocalActivityManager().removeAllActivities();
 				bodylayout.removeAllViews();
-				bodylayout.addView(viewStar);
-
-				 
-
+				bodylayout.addView(viewStar);				 
 			}
 		}
 	};
@@ -223,10 +216,8 @@ public class TabsActivity extends ActivityGroup {
 	 */
 	@Override
 	public void onDestroy() {
-		// deleteDatabase(MyConstants.DB_NAME);
 		if (quit_builder != null)
-			quit_builder.dismiss();
-		 
+			quit_builder.dismiss();		 
 		super.onDestroy();
 	}
 	

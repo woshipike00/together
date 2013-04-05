@@ -1,16 +1,14 @@
 package together.activity;
 
 
+import android.app.Application;
+import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
+
 import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.MKGeneralListener;
 import com.baidu.mapapi.map.MKEvent;
-
-import android.R.string;
-import android.app.Application;
-import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
 public class TogetherApp extends Application{
 	

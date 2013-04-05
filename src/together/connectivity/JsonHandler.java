@@ -27,9 +27,6 @@ public class JsonHandler {
 	private MessagePost msg;
 
 	 
-
-	// private User user;
-
 	/**
 	 * default constructor
 	 * */
@@ -37,71 +34,6 @@ public class JsonHandler {
 
 	}
 
-	/**
-	 * get user from json data
-	 * 
-	 * @param json
-	 *            json data , string
-	 * @return user instance
-	 * @throws JSONException
-	 * */
-//	public User getUser(String json) throws JSONException {
-//		JSONObject obj = new JSONObject(json);
-//		User u = new User();
-//		u.setUid(obj.getString("uid"));
-//		u.setNickname(obj.getString("nickname"));
-//		u.setAvatar(obj.getString("avatar"));
-//		u.setGender(obj.getString("gender"));
-//		u.setIntegrity(obj.getString("integrity"));
-//		u.setPoint(obj.getString("point"));
-//		u.setLocation(obj.getString("location"));
-//		return u;
-//	}
-
-	/**
-	 * get login user from json data
-	 * 
-	 * @param json
-	 *            json data
-	 * @return login user instance
-	 * @throws JSONException
-	 * */
-//	public LoginUser getLoginUser(String json) throws JSONException {
-//		JSONObject obj = new JSONObject(json);
-//		LoginUser u = new LoginUser();
-//		u.setUid(obj.getString("uid"));
-//		u.setNickname(obj.getString("nickname"));
-//		u.setGender(obj.getString("gender"));
-//		u.setIntegrity(obj.getString("integrity"));
-//		// System.out.println("integrity = " + obj.getString("integrity"));
-//		u.setPoint(obj.getString("point"));
-//		u.setLocation(obj.getString("location"));
-//		u.setMobile(obj.getString("mobile"));
-//		return u;
-//	}
-
-	/**
-	 * get login user instance by user id
-	 * 
-	 * @param json
-	 *            json data
-	 * @return user instance
-	 * @throws JSONException
-	 *
-	public LoginUser getUserById(String json) throws JSONException {
-		JSONObject obj = new JSONObject(json);
-		LoginUser u = new LoginUser();
-		u.setUid(obj.getString("uid"));
-		u.setUname(obj.getString("uname"));
-		u.setNickname(obj.getString("nickname"));
-		u.setAvatar(obj.getString("avatar"));
-		u.setGender(obj.getString("gender"));
-		u.setIntegrity(obj.getString("integrity"));
-		u.setPoint(obj.getString("point"));
-		u.setLocation(obj.getString("location"));
-		u.setMobile(obj.getString("mobile"));
-		return u;
-	}
 
 	/**
 	 * get a list of more apps
@@ -126,8 +58,6 @@ public class JsonHandler {
 			msg.setId(obj.getString("id"));
 			msg.setName(obj.getString("name"));
 			msg.setTime(obj.getString("time"));
-//			msg.setUrl(obj.getString("thumbnail_url_small").trim());
-//			msg.setLargeUrl(obj.getString("thumbnail_url_large").trim());
 			msgs.add(msg);
 		}
 		return msgs;
