@@ -16,10 +16,12 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -32,7 +34,7 @@ public class LoginActivity extends Activity {
 	private Context context;
  	private TextView login; 
 	private TextView register;
-	private EditText name;
+	private EditText uid;
 	private EditText pwd;
 	private ProgressDialog progressDialog;
 
@@ -51,15 +53,29 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.login);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		context = this;
+		
+//		/*如果已经登录，无需再输入登录信息*/
+//		String uid = getSharedPreferences("user", Context.MODE_PRIVATE).getString("user", "NOT_LOGGED");
+//		Intent intent = null;
+//		Log.i("together", uid);
+//		if(!uid.equals("NOT_LOGGED")) {
+//			intent = new Intent(LoginActivity.this,TabsActivity.class);
+//			startActivity(intent);
+//		}
  		initUI();
 
 		setClickListener();
 	}
+	
+//	@Override
+//	public void onResume() {
+//		
+//	}
 
 	private void initUI() {
  		login = (TextView) findViewById(R.id.login_login);
 		register = (TextView) findViewById(R.id.login_register);
-		name = (EditText) findViewById(R.id.login_account);
+		uid = (EditText) findViewById(R.id.login_account);
 		pwd = (EditText) findViewById(R.id.login_password); 
 		progressDialog = new ProgressDialog(context);
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -93,10 +109,10 @@ public class LoginActivity extends Activity {
 	private void clickLogin() {
  		Animation shakeAnim = AnimationUtils.loadAnimation(context,
 				R.anim.shake_x);
-		String name_str = name.getText().toString();
+		String name_str = uid.getText().toString();
 		String pwd_str = pwd.getText().toString();
 		if (name_str == null || name_str.trim().equals("")) {
-			name.startAnimation(shakeAnim);
+			uid.startAnimation(shakeAnim);
 			progressDialog.cancel();
 			Toast.makeText(LoginActivity.this, R.string.login_miss_username,
 					Toast.LENGTH_SHORT).show();
@@ -112,10 +128,14 @@ public class LoginActivity extends Activity {
 		final String name1 = name_str.trim();
 		final String pwd1 = pwd_str.trim();
 		progressDialog.show();
+		
+//		Editor sharedata = getSharedPreferences("user", Context.MODE_PRIVATE).edit().putString("uid",name1).commit();  
+//		sharedata.putString("uid",name1);  
+//		sharedata.commit();  
 		loginVarify(name1, pwd1);
 	}
 
-	private void loginVarify(final String name1, final String pwd1) {
+	private void loginVarify(final String uid, final String pwd1) {
 //		new Thread() {
 //			public void run() {
 //				MyHttpPost p = new MyHttpPost();
@@ -138,6 +158,17 @@ public class LoginActivity extends Activity {
 //							try {
 //								u = jsonHandler.getLoginUser(response);
 								handler.obtainMessage(MyConstants.MSG_SUCCESS1).sendToTarget();
+								getSharedPreferences("user", Context.MODE_PRIVATE).
+										edit().putString("uid",uid).commit(); 
+//								preferences = getSharedPreferences("user",
+//										Context.MODE_PRIVATE);
+//								preferences.edit().putString("user", uid).commit();
+//								editor = preferences.edit();
+//								editor.putString("uid", uid);
+//								editor.commit();
+								
+								
+								//editor.putString("id", u.getUid());
 //								preferences = getSharedPreferences("user_name",
 //										Context.MODE_PRIVATE);
 //								editor = preferences.edit();

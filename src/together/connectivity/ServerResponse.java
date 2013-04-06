@@ -49,19 +49,7 @@ public class ServerResponse {
 		//请求数据
 		HttpClient hc = new DefaultHttpClient();
 		HttpPost hp = new HttpPost(url);
-		
-//		HttpParams httpParameters = new BasicHttpParams();
-//		HttpProtocolParams.setContentCharset(httpParameters, HTTP.UTF_8);
-//		HttpProtocolParams.setHttpElementCharset(httpParameters, HTTP.UTF_8);
-//		hp.setParams(httpParameters);
-//		hp.addHeader("charset", HTTP.UTF_8); 
-//		hp.addHeader("Content-Type", "application/json");    
-		//请求json报文
-//		httppost.setEntity(new UrlEncodedFormEntity(params,HTTP.UTF_8));
 		hp.setEntity(new StringEntity(json.toString(), HTTP.UTF_8));
-//		Log.i("together", hp.getEntity().getContentEncoding().toString());
-//		Log.i("together", hp.getEntity().toString());
-		//Log.i("together", json.toString());
 		HttpResponse hr = hc.execute(hp);
 		//获取返回json报文
 		if(hr.getStatusLine().getStatusCode() == 200){

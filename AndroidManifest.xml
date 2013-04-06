@@ -69,10 +69,10 @@
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar" 
             android:label="@string/title_activity_main" >
-            <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
@@ -84,11 +84,13 @@
             android:name=".TabsActivity"
             android:theme="@android:style/Theme.NoTitleBar" 
             android:label="@string/title_activity_main" >
+            <!--
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />  
             </intent-filter>
+            -->
         </activity>
         
          <activity
