@@ -19,6 +19,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import together.models.EventMsg;
 import together.models.UserMsg;
 
@@ -100,7 +102,10 @@ public class JsonHandler {
 			JSONObject obj = array.getJSONObject(i);
 			uMsg = new UserMsg();
 			uMsg.setUid(obj.getString("uid"));
+			uMsg.setLongitude(obj.getString("longitude"));
+			uMsg.setLatitude(obj.getString("latitude"));
 			uMsgs.add(uMsg);
+			Log.v("together", "umsg: "+uMsg.getLatitude());
 		}
 		return uMsgs;
 	}
