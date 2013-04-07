@@ -65,6 +65,8 @@
     <string name="followed_by">我跟踪的</string>
     <string name="follow_me">Following</string>
     <string name="followed">Followed</string>
+    <string name="event_info">活动信息</string>
+    <string name="participate">参与</string>
     
     <string name="set_settings">个性设置</string>
     <string name="save">保存</string>

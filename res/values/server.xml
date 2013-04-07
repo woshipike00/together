@@ -5,4 +5,7 @@
     <string name="ListUser">/ListUser</string>
     <string name="NewEvent">/NewEvent</string>
     <string name="UpdateUserLocation">/UpdateUserLocation</string>
+    <string name="Follow">/Follow</string>
+    <string name="Unfollow">/Unfollow</string>
+    <string name="ListFollow">/ListFollow</string>
 </resources>
