@@ -10,8 +10,10 @@
     <string name="distance_more">2 KM以上</string>
     <string name="event_film">电影</string>
     <string name="event_drama">话剧</string>
-    <string name="event_eating">吃饭</string>
+    <string name="event_concert">演唱会</string>
+    <string name="event_lecture">讲座</string>
     <string name="event_ktv">K歌</string>
+    <string name="event_other">其他</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">together</string>
 	<string name="music_positive_btn">确定</string>
