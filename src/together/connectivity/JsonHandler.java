@@ -20,11 +20,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import together.models.EventMsg;
+import together.models.UserMsg;
 
 public class JsonHandler {
 	 
-	private List<EventMsg> msgs;
-	private EventMsg msg;
+	private List<EventMsg> eMsgs;
+	private List<UserMsg> uMsgs;
+	private EventMsg eMsg;
+	private UserMsg uMsg;
 
 	 
 	/**
@@ -45,7 +48,7 @@ public class JsonHandler {
 	 * */
 	 
 	public List<EventMsg> getMessages(String json) throws JSONException {
-		msgs = new ArrayList<EventMsg>();
+		eMsgs = new ArrayList<EventMsg>();
 		JSONObject object = new JSONObject("{\"star\":" + json + "}");
 		JSONArray array = object.getJSONArray("star");
 		int length = array.length();
@@ -53,40 +56,53 @@ public class JsonHandler {
 //			JSONObject object1 = array.getJSONObject(i);
 //			String obj2 = object1.getString("star");
 			JSONObject obj = new JSONObject(array.getJSONObject(i).getString("star"));
-			msg = new EventMsg();
+			eMsg = new EventMsg();
 			//TODO 获取正确信息
 //			msg.setEvent(obj.getString("event"));
 //			msg.setId(obj.getString("id"));
 //			msg.setName(obj.getString("name"));
 //			msg.setTime(obj.getString("time"));
-			msgs.add(msg);
+			eMsgs.add(eMsg);
 		}
-		return msgs;
+		return eMsgs;
 	}
 	
-	public List<EventMsg> getMessages(String json, String type) throws JSONException {
-		msgs = new ArrayList<EventMsg>();
+	public List<EventMsg> getEventMessages(String json, String type) throws JSONException {
+		eMsgs = new ArrayList<EventMsg>();
 		JSONObject object = new JSONObject(json);
 		JSONArray array = object.getJSONArray(type);
 		int length = array.length();
 		for (int i = 0; i < length; i++) {
-//			JSONObject object1 = array.getJSONObject(i);
-//			String obj2 = object1.getString("star");
 			JSONObject obj = array.getJSONObject(i);
-			msg = new EventMsg();
-			msg.setEid(obj.getString("eid"));
-			msg.setEname(obj.getString("place"));
-			msg.setUid(obj.getString("uid"));
-			msg.setType(obj.getString("type"));
-			msg.setDescription(obj.getString("description"));
-			msg.setLongitude(obj.getString("longitude"));
-			msg.setLatitude(obj.getString("latitude"));
-			msg.setStartDate(obj.getString("startDate"));
-			msg.setStartTime(obj.getString("startTime"));
-			msg.setEndDate(obj.getString("endDate"));
-			msg.setEndTime(obj.getString("endTime"));
-			msgs.add(msg);
+			eMsg = new EventMsg();
+			eMsg.setEid(obj.getString("eid"));
+			eMsg.setEname(obj.getString("place"));
+			eMsg.setUid(obj.getString("uid"));
+			eMsg.setType(obj.getString("type"));
+			eMsg.setDescription(obj.getString("description"));
+			eMsg.setLongitude(obj.getString("longitude"));
+			eMsg.setLatitude(obj.getString("latitude"));
+			eMsg.setStartDate(obj.getString("startDate"));
+			eMsg.setStartTime(obj.getString("startTime"));
+			eMsg.setEndDate(obj.getString("endDate"));
+			eMsg.setEndTime(obj.getString("endTime"));
+			eMsgs.add(eMsg);
 		}
-		return msgs;
+		return eMsgs;
 	}
+	
+	public List<UserMsg> getUserMessages(String json, String type) throws JSONException {
+		uMsgs = new ArrayList<UserMsg>();
+		JSONObject object = new JSONObject(json);
+		JSONArray array = object.getJSONArray(type);
+		int length = array.length();
+		for (int i = 0; i < length; i++) {
+			JSONObject obj = array.getJSONObject(i);
+			uMsg = new UserMsg();
+			uMsg.setUid(obj.getString("uid"));
+			uMsgs.add(uMsg);
+		}
+		return uMsgs;
+	}
+	
 }
