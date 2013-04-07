@@ -32,13 +32,13 @@
              <TextView
 	            android:id="@+id/sItemUid"
 	            android:layout_width="120dp"
-	            android:layout_height="40dp"
+	            android:layout_height="30dp"
 	            android:layout_gravity="center"
 	            android:padding="2dp"
 	            android:textColor="@color/white"
 	            android:scaleType="centerCrop" 
 	            android:text="info"
-                android:textSize="18dp" />
+                android:textSize="20dp" />
              <TextView
 	            android:layout_width="120dp"
 	            android:layout_height="20dp"
@@ -51,7 +51,7 @@
               <TextView
 	            android:id="@+id/sItemTime"
 	            android:layout_width="120dp"
-	            android:layout_height="35dp"
+	            android:layout_height="25dp"
 	            android:layout_gravity="center"
 	            android:padding="2dp"
 	            android:textColor="@color/white"
@@ -78,12 +78,23 @@
                 android:text="info"
                 android:textSize="18dp" />
             
+            
+            
             <TextView
-                android:id="@+id/sItemTitle"
+                android:id="@+id/sItemDescription"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:textColor="@color/white"
+                android:text="title"
+                android:textSize="12dp" />
+            
+            <TextView
+                android:id="@+id/sItemTitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/blue"
                 android:text="title"
                 android:textSize="12dp" />
         </LinearLayout>
