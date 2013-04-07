@@ -10,6 +10,7 @@
         android:layout_height="43dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:background="@color/deepSkyBlue"
         android:orientation="horizontal" >
 
         <TextView

@@ -1,43 +1,35 @@
 package together.activity;
 
-
 import java.io.File;
 import java.io.IOException;
- 
 
 import together.utils.MyConstants;
 import together.utils.StorageUtils;
-
-import android.os.Bundle;
-import android.app.Activity;
 import android.app.ActivityGroup;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.Resources;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import android.support.v4.app.NavUtils;
 
 public class TabsActivity extends ActivityGroup {
 
 	private LinearLayout bodylayout;
-	private RelativeLayout root;
+//	private RelativeLayout root;
 	private LinearLayout tabMain;
 	private LinearLayout tabStar;
 	private LinearLayout tabColumn;
 	private LinearLayout tabMore;
-	private LinearLayout tab_layout;
+//	private LinearLayout tab_layout;
 	private int current = 1;
 	private View viewHome;
 	private View viewMore;
@@ -47,12 +39,13 @@ public class TabsActivity extends ActivityGroup {
 	// private static final String tag = "InMusic";
 	private LinearLayout.LayoutParams linearLayouttParams;
 	final int WRAP_CONTENT = ViewGroup.LayoutParams.WRAP_CONTENT;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tab);
-        
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.tab);
+
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		quit_builder = new AlertDialog.Builder(this)
 				.setTitle(R.string.music_exit)
@@ -102,7 +95,7 @@ public class TabsActivity extends ActivityGroup {
 		initUI();
 		linearLayouttParams = new LinearLayout.LayoutParams(WRAP_CONTENT,
 				WRAP_CONTENT);
-		
+
 		bodylayout.removeAllViews();
 		viewHome = getLocalActivityManager().startActivity(
 				"indexHome",
@@ -110,9 +103,9 @@ public class TabsActivity extends ActivityGroup {
 						.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
 				.getDecorView();
 		bodylayout.addView(viewHome, linearLayouttParams);
-    }
+	}
 
-    @Override
+	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_MENU) {
 			this.getLocalActivityManager().getCurrentActivity()
@@ -124,10 +117,10 @@ public class TabsActivity extends ActivityGroup {
 		} else
 			return super.onKeyDown(keyCode, event);
 	}
-    
-    private void initUI() {
+
+	private void initUI() {
 		setContentView(R.layout.tab);
-		root = (RelativeLayout) findViewById(R.id.roots); 		 
+//		root = (RelativeLayout) findViewById(R.id.roots);
 		bodylayout = (LinearLayout) findViewById(R.id.bodylayout);
 
 		tabMain = (LinearLayout) findViewById(R.id.tab_main_layout);
@@ -141,8 +134,8 @@ public class TabsActivity extends ActivityGroup {
 		tabMore.setOnClickListener(new OnTabMoreClickListener());
 
 	}
-    
-    private class OnTabMainClickListener implements OnClickListener {
+
+	private class OnTabMainClickListener implements OnClickListener {
 		public void onClick(View v) {
 			if (current != R.id.tab_main_layout) {
 				viewHome = getLocalActivityManager()
@@ -156,7 +149,6 @@ public class TabsActivity extends ActivityGroup {
 				bodylayout.removeAllViews();
 				bodylayout.addView(viewHome);
 
-				 
 			}
 		}
 	};
@@ -172,7 +164,7 @@ public class TabsActivity extends ActivityGroup {
 				current = R.id.tab_star_layout;
 				getLocalActivityManager().removeAllActivities();
 				bodylayout.removeAllViews();
-				bodylayout.addView(viewStar);				 
+				bodylayout.addView(viewStar);
 			}
 		}
 	};
@@ -189,7 +181,6 @@ public class TabsActivity extends ActivityGroup {
 				bodylayout.removeAllViews();
 				bodylayout.addView(viewColumn);
 
-				 
 			}
 		}
 	};
@@ -206,7 +197,6 @@ public class TabsActivity extends ActivityGroup {
 				bodylayout.removeAllViews();
 				bodylayout.addView(viewMore);
 
-				 
 			}
 		}
 	};
@@ -217,15 +207,14 @@ public class TabsActivity extends ActivityGroup {
 	@Override
 	public void onDestroy() {
 		if (quit_builder != null)
-			quit_builder.dismiss();		 
+			quit_builder.dismiss();
 		super.onDestroy();
 	}
-	
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
 
-    
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
+
 }

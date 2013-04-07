@@ -21,4 +21,5 @@
     <color name="blueviolet">#8A2BE2</color>
     <color name="TextColor">#FFFFFF</color>
     <color name="bgColor">#000000</color>
+    <color name="deepSkyBlue">#00BFFF</color>
 </resources>

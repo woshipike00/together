@@ -63,7 +63,7 @@
     <string name="followed_by">我跟踪的</string>
     <string name="follow_me">Following</string>
     <string name="followed">Followed</string>
-    
+    <string name="follow">Follow</string>
     <string name="set_settings">个性设置</string>
     <string name="save">保存</string>
     <string name="max_visible">最大可视范围</string>
