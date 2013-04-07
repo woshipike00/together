@@ -61,8 +61,8 @@
     <string name="no_more">没有更多了</string>
     
     <string name="nearby">附近用户</string>
-    <string name="send_by">我发送的</string>
-    <string name="followed_by">我跟踪的</string>
+    <string name="send_by">我发布的</string>
+    <string name="followed_by">我关注的</string>
     <string name="follow_me">Following</string>
     <string name="followed">Followed</string>
      <string name="follow">Follow</string>
