@@ -88,10 +88,10 @@ public class LoginActivity extends Activity {
 		register.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(LoginActivity.this,
-						RegisterActivity.class);
-				startActivity(intent);
-				finish();
+//				Intent intent = new Intent(LoginActivity.this,
+//						RegisterActivity.class);
+//				startActivity(intent);
+//				finish();
 			}
 		});
 

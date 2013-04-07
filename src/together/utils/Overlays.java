@@ -84,7 +84,7 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 		System.out.println("ontap: "+j);
 		final int i=j;
 		selected=j;
-		Toast.makeText(context, overlaylist.get(i).getSnippet(), Toast.LENGTH_SHORT).show();
+		Toast.makeText(context, "活动:" + overlaylist.get(i).getSnippet(), Toast.LENGTH_SHORT).show();
 		mapView.getController().animateTo(overlaylist.get(i).getPoint());
 		//popList.get(i).change();
 
@@ -94,7 +94,7 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 			public void onClickedPopup(int index) {
 				// TODO Auto-generated method stub
 				System.out.println(selected+" "+overlaylist.get(selected).getSnippet());
-				Toast.makeText(context, overlaylist.get(selected).getSnippet(), Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "活动:" + overlaylist.get(selected).getSnippet(), Toast.LENGTH_SHORT).show();
 				MySearch mySearch=new MySearch(context, mapView, mapManager);
 				MKPlanNode start=new MKPlanNode();
 				MKPlanNode end=new MKPlanNode();

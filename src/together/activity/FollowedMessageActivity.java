@@ -9,7 +9,7 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 	private Followers foverlays;	//private List<PopUpOverlay> poplist;	private LocationClient locationClient;	// 所有events	// 存储从服务器获得的所有events信息	private ArrayList<HashMap<String, Object>> mAllEvents;
 	// 存储从服务器获得的所有follower信息
 		private ArrayList<HashMap<String, Object>> mFollower;	// 当前event	private HashMap<String, Object> mCurrentEvent;	@Override	public void onCreate(Bundle savedInstanceState) {		super.onCreate(savedInstanceState);		//获取UID		UID = getSharedPreferences("user", Context.MODE_PRIVATE).getString("uid", null);  		mMapManager = ((TogetherApp) getApplication()).getMapManager();		setContentView(R.layout.follow_message);		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);		context = this;		initUI();		initMap();		//new Thread(new InitMap()).start();		locationClient=((TogetherApp)getApplication()).getLocationClient();		locationClient.registerLocationListener(new TogetherApp.MyLocationListener(mapView));		locationClient.setLocOption(getlocOption());	}	protected void onResume() {		super.onResume();		//TODO 将地图定位到当前event//		new LocateEvent().execute(null, null, null);		//从服务器获取所有event信息		new RequestAllEvents().execute(null, null, null);
-		//TODO 		new RequestFollowers().execute(null, null, null);		locationClient.start();	}	protected void  onPause() {		super.onPause();		locationClient.stop();	}	private void initUI() {		eid = (String) getIntent().getSerializableExtra("eid");		place = (String) getIntent().getSerializableExtra("place");		uid = (String) getIntent().getSerializableExtra("uid");		type = (String) getIntent().getSerializableExtra("type");		description = (String) getIntent().getSerializableExtra("description");		longitude = (String) getIntent().getSerializableExtra("longitude");		latitude = (String) getIntent().getSerializableExtra("latitude");		time = (String) getIntent().getSerializableExtra("time");		participate = (TextView) findViewById(R.id.participate);		message_in_follow = (TextView) findViewById(R.id.message_in_follow);		message_in_follow.setText("用户 " + uid + " 于 " + time + " 发起了" + "\n"								+ "活动 " + type + " ,  地点: " + place + "\n" 								+ "活动描述：" + description);		mapView = (MapView) findViewById(R.id.followmap);		btn1=(Button)findViewById(R.id.button1);		// 定位		btn1.setOnClickListener(new Button.OnClickListener(){			@Override			public void onClick(View arg0) {				locationClient.requestLocation();			}		});
+		//TODO 		new RequestFollowers().execute(null, null, null);		locationClient.start();	}	protected void  onPause() {		super.onPause();		locationClient.stop();	}	private void initUI() {		eid = (String) getIntent().getSerializableExtra("eid");		place = (String) getIntent().getSerializableExtra("place");		uid = (String) getIntent().getSerializableExtra("uid");		type = (String) getIntent().getSerializableExtra("type");		description = (String) getIntent().getSerializableExtra("description");		longitude = (String) getIntent().getSerializableExtra("longitude");		latitude = (String) getIntent().getSerializableExtra("latitude");		time = getIntent().getSerializableExtra("time").toString().substring(0, 5);		participate = (TextView) findViewById(R.id.participate);		message_in_follow = (TextView) findViewById(R.id.message_in_follow);		message_in_follow.setText("用户 " + uid + " 于 " + time + " 发起了" + "\n"								+ "活动 " + type + " ,  地点: " + place + "\n" 								+ "活动描述：" + description);		mapView = (MapView) findViewById(R.id.followmap);		btn1=(Button)findViewById(R.id.button1);		// 定位		btn1.setOnClickListener(new Button.OnClickListener(){			@Override			public void onClick(View arg0) {				locationClient.requestLocation();			}		});
 		
 		btn2=(Button)findViewById(R.id.button2);
 
@@ -24,8 +24,10 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-					if(mFollower==null || mFollower.size()==0)
+					if(mFollower==null || mFollower.size()==0) {
+						Toast.makeText(getApplicationContext(), "这个活动还没有人参与，赶快参加吧！", Toast.LENGTH_SHORT).show();
 						return;
+					}
 					mapView.getOverlays().add(foverlays);
 					mapView.refresh();
                     GeoPoint p=new GeoPoint((int)(Double.parseDouble(latitude)*1e6), (int)(Double.parseDouble(longitude)*1e6));
@@ -39,8 +41,10 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-					if(mAllEvents==null || mAllEvents.size()==0)
+					if(mAllEvents==null || mAllEvents.size()==0) {
+						Toast.makeText(getApplicationContext(), "没有其他活动了", Toast.LENGTH_SHORT).show();
 						return;
+					}
 					mapView.getOverlays().add(overlays);
 					mapView.refresh();
 					GeoPoint p=new GeoPoint((int)(Double.parseDouble(latitude)*1e6), (int)(Double.parseDouble(longitude)*1e6));
@@ -111,9 +115,6 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 		ArrayList<GeoPoint> followers=new ArrayList<GeoPoint>();
 		for (int i=0;i<mFollower.size();i++){
 			HashMap<String, Object> follower=mFollower.get(i);
-			Log.v("mfollower", mFollower.size()+""+(String)follower.get("uid"));
-
-			
 			int latitude=(int)(Double.parseDouble((String)follower.get("latitude"))*1e6);
 			int longitude=(int)(Double.parseDouble((String)follower.get("longitude"))*1e6);
 			GeoPoint point=new GeoPoint(latitude, longitude);
@@ -126,5 +127,5 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 		foverlays=new Followers(context, d, followers, mapView, mFollower);
 
 
-	}	public LocationClientOption getlocOption(){		LocationClientOption option = new LocationClientOption();		//option.setOpenGps(true);		option.setAddrType("all");//返回的定位结果包含地址信息		option.setCoorType("bd09ll");//返回的定位结果是百度经纬度,默认值gcj02		//option.setScanSpan(5000);//设置发起定位请求的间隔时间为5000ms		option.disableCache(true);//禁止启用缓存定位		//option.setPoiNumber(5);	//最多返回POI个数			//option.setPoiDistance(1000); //poi查询距离				//option.setPoiExtraInfo(true); //是否需要POI的电话和地址等详细信息			return option;	}	private void participate(String eid, String startUid, String followUid) throws JSONException, ClientProtocolException, IOException {		String url = MyConstants.SITE + getString(R.string.Follow);		JSONObject json = new JSONObject();		json.put("eid", eid);		json.put("startUid", startUid);		json.put("followUid", followUid);		//向服务器发送参与请求		String result = ServerResponse.getResponse(url, json);//		Log.i("together", result);		if(result.contains("success"))			Toast.makeText(getApplicationContext(), "参与成功", Toast.LENGTH_SHORT).show();		else			Toast.makeText(getApplicationContext(), "参与失败", Toast.LENGTH_SHORT).show();	}}
+	}	public LocationClientOption getlocOption(){		LocationClientOption option = new LocationClientOption();		//option.setOpenGps(true);		option.setAddrType("all");//返回的定位结果包含地址信息		option.setCoorType("bd09ll");//返回的定位结果是百度经纬度,默认值gcj02		//option.setScanSpan(5000);//设置发起定位请求的间隔时间为5000ms		option.disableCache(true);//禁止启用缓存定位		//option.setPoiNumber(5);	//最多返回POI个数			//option.setPoiDistance(1000); //poi查询距离				//option.setPoiExtraInfo(true); //是否需要POI的电话和地址等详细信息			return option;	}	private void participate(String eid, String startUid, String followUid) throws JSONException, ClientProtocolException, IOException {		String url = MyConstants.SITE + getString(R.string.Follow);		JSONObject json = new JSONObject();		json.put("eid", eid);		json.put("startUid", startUid);		json.put("followUid", followUid);		//向服务器发送参与请求		String result = ServerResponse.getResponse(url, json);//		Log.i("together", result);		if(result.contains("success"))			Toast.makeText(getApplicationContext(), "参加成功", Toast.LENGTH_SHORT).show();		else			Toast.makeText(getApplicationContext(), "你已经参加了..", Toast.LENGTH_SHORT).show();	}}
 //>>>>>>> 6b62438e0d63fe85506c3173992eaf06e5fb7df6

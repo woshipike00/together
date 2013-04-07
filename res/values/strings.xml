@@ -9,7 +9,7 @@
     <string name="distance_2000">2 KM</string>
     <string name="distance_more">2 KM以上</string>
     <string name="event_film">电影</string>
-    <string name="event_drama">话剧</string>
+    <string name="event_drama">体育</string>
     <string name="event_concert">演唱会</string>
     <string name="event_lecture">讲座</string>
     <string name="event_ktv">K歌</string>
@@ -44,7 +44,7 @@
     <string name="register_name">用户名:</string>
     <string name="register_register">注册</string>
     <string name="_loading">加载中</string>
-    <string name="send_message_title">发请求</string>
+    <string name="send_message_title">发起活动</string>
     <string name="event_place">地点</string>
     <string name="event_time">时间</string>
     <string name="event_type">类型</string>
@@ -56,18 +56,20 @@
     
     <string name="send">发布</string>
     <string name="user">用户名</string>
+    <string name="fill_event_place">请填写详细活动地点</string>
+    <string name="fill_event_description">请填写详细活动描述</string>
     
     <string name="_more">点击获取更多项</string>
     <string name="no_more">没有更多了</string>
     
     <string name="nearby">附近用户</string>
     <string name="send_by">我发布的</string>
-    <string name="followed_by">我关注的</string>
+    <string name="followed_by">我参加的</string>
     <string name="follow_me">Following</string>
     <string name="followed">Followed</string>
      <string name="follow">Follow</string>
      <string name="event_info">活动信息</string>
-    <string name="participate">参与</string>
+    <string name="participate">参加</string>
     <string name="follower">参与者</string>
     
      <string name="set_settings">个性设置</string>
