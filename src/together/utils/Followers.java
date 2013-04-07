@@ -50,7 +50,7 @@ public class Followers extends ItemizedOverlay<OverlayItem>{
 
 		for (int i=0;i<list.size()-1;i++){
 			HashMap<String, Object> follower=allfollowers.get(i);
-			OverlayItem item=new OverlayItem(list.get(i), null,"uid: "+(String)follower.get("uid"));
+			OverlayItem item=new OverlayItem(list.get(i), null,"用户: "+(String)follower.get("uid"));
 			overlaylist.add(item);
 			//popflags[i]=0;
 			//popList.add(null);
@@ -60,7 +60,7 @@ public class Followers extends ItemizedOverlay<OverlayItem>{
 		overlaylist.add(new OverlayItem(list.get(list.size()-1), "event", "event"));
 		Log.v("together", "geopoint: "+list.get(list.size()-1).toString()+","+list.get(list.size()-2));
 
-		overlaylist.get(list.size()-1).setMarker(context.getResources().getDrawable(R.drawable.arrow));
+		overlaylist.get(list.size()-1).setMarker(context.getResources().getDrawable(R.drawable.current_event));
 
 		populate();
 
@@ -69,7 +69,7 @@ public class Followers extends ItemizedOverlay<OverlayItem>{
 	
 	protected boolean onTap(int index) {
 		super.onTap(index);
-		Toast.makeText(context, overlaylist.get(index).getSnippet(), Toast.LENGTH_SHORT);
+		Toast.makeText(context, overlaylist.get(index).getSnippet(), Toast.LENGTH_SHORT).show();
 		return true;
 		
 	}

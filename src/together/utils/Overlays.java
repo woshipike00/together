@@ -58,7 +58,7 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 
 		}
 
-		overlaylist.get(mainindex).setMarker(context.getResources().getDrawable(R.drawable.arrow));
+		overlaylist.get(mainindex).setMarker(context.getResources().getDrawable(R.drawable.current_event));
 
 		populate();
 
@@ -112,7 +112,7 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 
 		Bitmap bmp=null;
 		try {
-			bmp = BitmapFactory.decodeStream(context.getAssets().open("badge_nsw.png"));
+			bmp = BitmapFactory.decodeStream(context.getAssets().open("pop.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
