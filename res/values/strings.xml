@@ -54,15 +54,15 @@
     <string name="pull_to_refresh_refreshing_label">载入中</string>
     <string name="pull_to_refresh_tap_label">点击以刷屏</string>
     
-    <string name="send">发送</string>
+    <string name="send">发布</string>
     <string name="user">用户名</string>
     
     <string name="_more">点击获取更多项</string>
     <string name="no_more">没有更多了</string>
     
-    <string name="nearby">附件用户</string>
-    <string name="send_by">我发送的</string>
-    <string name="followed_by">我跟踪的</string>
+    <string name="nearby">附近用户</string>
+    <string name="send_by">我发布的</string>
+    <string name="followed_by">我关注的</string>
     <string name="follow_me">Following</string>
     <string name="followed">Followed</string>
      <string name="follow">Follow</string>
