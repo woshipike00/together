@@ -16,7 +16,7 @@ public class MyConstants {
 	public static final String ROOTDIR = Environment
 			.getExternalStorageDirectory() + "/cache/";
 	public static final String M3U8DIR = ROOTDIR + "m3u8/";
-	public static final String SITE = "http://music.client.cnlive.com";
+	public static final String SITE = "http://itogether.sinaapp.com";
 	public static final String SITE_PORT = "http://music.client.cnlive.com:8888";
 	public static final int MSG_SUCCESS1 = 0;
 	public static final int MSG_SUCCESS2 = 1;

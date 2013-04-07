@@ -5,7 +5,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+        android:targetSdkVersion="8" />
     
     <supports-screens android:largeScreens="true"
         android:normalScreens="true"
@@ -59,20 +59,23 @@
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
 	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
 	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+	
+	
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" android:name="TogetherApp">
         
-        
+             <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+</service>   
         <activity
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar" 
             android:label="@string/title_activity_main" >
-            <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
@@ -84,11 +87,13 @@
             android:name=".TabsActivity"
             android:theme="@android:style/Theme.NoTitleBar" 
             android:label="@string/title_activity_main" >
+            <!--
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />  
             </intent-filter>
+            -->
         </activity>
         
          <activity
