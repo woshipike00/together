@@ -115,6 +115,10 @@ public class TogetherApp extends Application{
 			GeoPoint newlocation=new GeoPoint((int)(arg0.getLatitude()*1e6),(int) (arg0.getLongitude()*1e6));
 			mylocation=newlocation;
 			MyLocationOverlay mylocOverlay=new MyLocationOverlay(mapView);
+			LocationData locData=new LocationData();
+			locData.latitude=arg0.getLatitude();
+			locData.longitude=arg0.getLongitude();
+			mylocOverlay.setData(locData);
 			mapView.getOverlays().add(mylocOverlay);
 			mapView.refresh();
 			mapView.getController().animateTo(mylocation);

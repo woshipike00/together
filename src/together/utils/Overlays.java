@@ -3,12 +3,15 @@ package together.utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import together.activity.R;
 import together.activity.TogetherApp;
 
 import android.R.bool;
 import android.R.integer;
+import android.R.string;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -35,7 +38,7 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 	private static int selected=0;
 	private BMapManager mapManager;
 
-	public Overlays(Context context,Drawable d,List<GeoPoint> list,MapView mapView) throws IOException {
+	public Overlays(Context context,Drawable d,List<GeoPoint> list,MapView mapView,int mainindex,ArrayList<HashMap<String, Object>> allevents) throws IOException {
 		super(d);
 		this.context=context;
 		this.mapView=mapView;
@@ -46,13 +49,17 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 		//popList=new ArrayList<PopupOverlay>(list.size());
 
 		for (int i=0;i<list.size();i++){
-			OverlayItem item=new OverlayItem(list.get(i), String.valueOf(i),"snippet: "+i);
+			HashMap<String, Object> event=allevents.get(i);
+			OverlayItem item=new OverlayItem(list.get(i), "event: "+(String)event.get("eid"),(String)event.get("description"));
 			overlaylist.add(item);
 			//popflags[i]=0;
 			//popList.add(null);
             //popList.add(new PopUpOverlay(context, mapView,new PopUpOverlay.poplistener(context,item),item));      
 
 		}
+		
+		overlaylist.get(mainindex).setMarker(context.getResources().getDrawable(R.drawable.arrow));
+		
 		populate();
 
 
