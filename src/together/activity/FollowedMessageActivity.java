@@ -28,7 +28,7 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 						return;
 					mapView.getOverlays().add(foverlays);
 					mapView.refresh();
-                    GeoPoint p=new GeoPoint((int)Double.parseDouble(latitude), (int)Double.parseDouble(longitude));
+                    GeoPoint p=new GeoPoint((int)(Double.parseDouble(latitude)*1e6), (int)(Double.parseDouble(longitude)*1e6));
 					mapView.getController().animateTo(p);
 					flag=0;
 				}
@@ -42,7 +42,7 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 						return;
 					mapView.getOverlays().add(overlays);
 					mapView.refresh();
-					GeoPoint p=new GeoPoint((int)Double.parseDouble(latitude), (int)Double.parseDouble(longitude));
+					GeoPoint p=new GeoPoint((int)(Double.parseDouble(latitude)*1e6), (int)(Double.parseDouble(longitude)*1e6));
 					mapView.getController().animateTo(p);
 					flag=1;
 				}
@@ -115,7 +115,7 @@ import together.utils.MyConstants;import together.utils.Overlays;import com.b
 			followers.add(point);
 		}
 		
-		followers.add(new GeoPoint((int)Double.parseDouble(latitude), (int)Double.parseDouble(longitude)));
+		followers.add(new GeoPoint((int)(Double.parseDouble(latitude)*1e6), (int)(Double.parseDouble(longitude)*1e6)));
 		
     	Drawable d=getResources().getDrawable(R.drawable.badge_qld);
 		foverlays=new Followers(context, d, followers, mapView, mFollower);

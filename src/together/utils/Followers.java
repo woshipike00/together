@@ -15,6 +15,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.baidu.mapapi.BMapManager;
@@ -57,6 +58,7 @@ public class Followers extends ItemizedOverlay<OverlayItem>{
 
 		}
 		overlaylist.add(new OverlayItem(list.get(list.size()-1), "event", "event"));
+		Log.v("together", "geopoint: "+list.get(list.size()-1).toString()+","+list.get(list.size()-2));
 
 		overlaylist.get(list.size()-1).setMarker(context.getResources().getDrawable(R.drawable.arrow));
 
