@@ -18,14 +18,14 @@ import com.baidu.mapapi.map.MyLocationOverlay;
 import com.baidu.platform.comapi.basestruct.GeoPoint;
 
 public class TogetherApp extends Application{
-	
+
 	private static TogetherApp mApp=null;
 	private BMapManager mMapManager=null;
 	private final String key="1F2D99F56D2766A3C32DD06ED9EBDB603595634C";
 	private static LocationClient mLocationClient=null;
 	private static GeoPoint mylocation; 
 
-	
+
 	public void onCreate(){
 		super.onCreate();
 		mApp=this;
@@ -33,41 +33,41 @@ public class TogetherApp extends Application{
 		mLocationClient=new LocationClient(this);
 
 	}
-	
+
 	public void onTerminate(){
 		if (mMapManager!=null)
 			mMapManager.destroy();
 		mMapManager=null;
 		super.onTerminate();
 	}
-	
+
 	public void initMapManager(Context context){
-		
+
 		Log.v("app", "init mapmanager");
 		if(mMapManager==null)
 			mMapManager=new BMapManager(context);
 		if(!mMapManager.init(key, new MyGeneralListener())){
 			Toast.makeText(context, "mMapManager init error!", Toast.LENGTH_LONG).show();
 		}
-		
+
 	}
-	
+
 	public static Application getInstance(){
 		return mApp;
 	}
-	
+
 	public BMapManager getMapManager(){
 		return mMapManager;
 	}
-	
+
 	public static LocationClient getLocationClient(){
 		return mLocationClient;
 	}
-	
+
 	public static GeoPoint getMyLocation(){
 		return mylocation;
 	}
-	
+
 	// 常用事件监听，用来处理通常的网络错误，授权验证错误等
     static class MyGeneralListener implements MKGeneralListener {
         
@@ -110,11 +110,15 @@ public class TogetherApp extends Application{
 				return;
 			}
 			//System.out.println("lala"+arg0.getLongitude());
-			
+
 			//Toast.makeText(getInstance(), arg0.getLongitude()+", "+arg0.getLatitude(),Toast.LENGTH_SHORT  );
 			GeoPoint newlocation=new GeoPoint((int)(arg0.getLatitude()*1e6),(int) (arg0.getLongitude()*1e6));
 			mylocation=newlocation;
 			MyLocationOverlay mylocOverlay=new MyLocationOverlay(mapView);
+			LocationData locData=new LocationData();
+			locData.latitude=arg0.getLatitude();
+			locData.longitude=arg0.getLongitude();
+			mylocOverlay.setData(locData);
 			mapView.getOverlays().add(mylocOverlay);
 			mapView.refresh();
 			mapView.getController().animateTo(mylocation);
@@ -123,7 +127,7 @@ public class TogetherApp extends Application{
 		@Override
 		public void onReceivePoi(BDLocation arg0) {
 			// TODO Auto-generated method stub
-			
+
 		}
     	
     }
