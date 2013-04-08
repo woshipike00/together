@@ -8,6 +8,12 @@ import java.util.List;
 
 import together.activity.R;
 import together.activity.TogetherApp;
+
+
+import android.R.bool;
+import android.R.integer;
+import android.R.string;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -46,6 +52,7 @@ public class Overlays extends ItemizedOverlay<OverlayItem>{
 			 
 
 		}
+
 
 		overlaylist.get(mainindex).setMarker(context.getResources().getDrawable(R.drawable.current_event));
 
