@@ -1,14 +1,45 @@
 //<<<<<<< HEAD
 //package together.activity;//////import android.app.Activity;//import android.content.Context;//import android.content.pm.ActivityInfo;//import android.os.Bundle;//import android.util.Log;//import android.widget.TextView;////import com.baidu.mapapi.BMapManager;//import com.baidu.mapapi.map.MapController;//import com.baidu.mapapi.map.MapView;////public class FollowedMessageActivity extends Activity{//	private Context context;//	private String time;//	private String name;//	private String event;//	//	private TextView message_in_follow;//	private MapView mapView;//	//	private BMapManager mMapManager;//	private MapController mMapController;//	//	 @Override//	    public void onCreate(Bundle savedInstanceState) {//		 //		    Log.v("followmessage", "oncreate");//	        super.onCreate(savedInstanceState);//	        mMapManager=((TogetherApp)getApplication()).getMapManager();//	        setContentView(R.layout.follow_message);//	        //	        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//	        //	        //	        context = this;//			initUI();//			initMap();//			//			//			//	 }//	 ////	 //	private void initUI() {// 		time = (String) getIntent().getSerializableExtra("time");//		name = (String) getIntent().getSerializableExtra("name");//		event = (String) getIntent().getSerializableExtra("event");//		//		message_in_follow = (TextView) findViewById(R.id.message_in_follow);//		message_in_follow.setText(time +"\n"+ event+" by "+name);//		//		mapView=(MapView)findViewById(R.id.followmap);//	}//	//	private void initMap(){//		mMapController=mapView.getController();//		//		mMapController.enableClick(true);//        mMapController.setZoom(12);//        mapView.displayZoomControls(true);////        mMapView.setTraffic(true);////        mMapView.setSatellite(true);//        mapView.setDoubleClickZooming(true);//	}//}
 //=======
-package together.activity;import java.io.IOException;import java.util.ArrayList;import java.util.HashMap;import java.util.List;import org.apache.http.client.ClientProtocolException;import org.json.JSONException;import org.json.JSONObject;import together.connectivity.JsonHandler;import together.connectivity.ServerResponse;import together.models.EventMsg;import together.models.UserMsg;
+package together.activity;import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.http.client.ClientProtocolException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import together.connectivity.JsonHandler;
+import together.connectivity.ServerResponse;
+import together.models.EventMsg;
+import together.models.UserMsg;
 import together.utils.Followers;
-import together.utils.MyConstants;import together.utils.Overlays;import com.baidu.location.LocationClient;import com.baidu.location.LocationClientOption;import com.baidu.mapapi.BMapManager;import com.baidu.mapapi.map.MapController;import com.baidu.mapapi.map.MapView;import com.baidu.mapapi.search.MKSearch;import com.baidu.platform.comapi.basestruct.GeoPoint;import android.app.Activity;import android.content.Context;import android.content.pm.ActivityInfo;import android.graphics.drawable.Drawable;import android.os.AsyncTask;import android.os.Bundle;import android.util.Log;import android.view.View;import android.widget.Button;import android.widget.TextView;import android.widget.Toast;public class FollowedMessageActivity extends Activity {	private Context context;	private String eid;	private String place;	private String uid;	private String type;	private String description;	private String longitude;	private String latitude;	private String time;	private String UID;	private TextView message_in_follow;	private TextView participate;	private MapView mapView;	private Button btn1;
-	private Button btn2;	private BMapManager mMapManager;	private MapController mMapController;	private List<GeoPoint> geolist;	private List<GeoPoint> mainList;	// the index of the current event in mAllEvent	private static int mainindex;
+import together.utils.MyConstants;
+import together.utils.Overlays;
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.mapapi.map.MapController;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.platform.comapi.basestruct.GeoPoint;
+public class FollowedMessageActivity extends Activity {	private Context context;	private String eid;	private String place;	private String uid;	private String type;	private String description;	private String longitude;	private String latitude;	private String time;	private String UID;	private TextView message_in_follow;	private TextView participate;	private MapView mapView;	private Button btn1;
+	private Button btn2;//	private BMapManager mMapManager;	private MapController mMapController;	private List<GeoPoint> geolist;	private List<GeoPoint> mainList;	// the index of the current event in mAllEvent	private static int mainindex;
 	private static int flag=0;	private Overlays overlays;
 	private Followers foverlays;	//private List<PopUpOverlay> poplist;	private LocationClient locationClient;	// 所有events	// 存储从服务器获得的所有events信息	private ArrayList<HashMap<String, Object>> mAllEvents;
 	// 存储从服务器获得的所有follower信息
-		private ArrayList<HashMap<String, Object>> mFollower;	// 当前event	private HashMap<String, Object> mCurrentEvent;	@Override	public void onCreate(Bundle savedInstanceState) {		super.onCreate(savedInstanceState);		//获取UID		UID = getSharedPreferences("user", Context.MODE_PRIVATE).getString("uid", null);  		mMapManager = ((TogetherApp) getApplication()).getMapManager();		setContentView(R.layout.follow_message);		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);		context = this;		initUI();		initMap();		//new Thread(new InitMap()).start();		locationClient=((TogetherApp)getApplication()).getLocationClient();		locationClient.registerLocationListener(new TogetherApp.MyLocationListener(mapView));		locationClient.setLocOption(getlocOption());	}	protected void onResume() {		super.onResume();		//TODO 将地图定位到当前event//		new LocateEvent().execute(null, null, null);		//从服务器获取所有event信息		new RequestAllEvents().execute(null, null, null);
+		private ArrayList<HashMap<String, Object>> mFollower;	// 当前event//	private HashMap<String, Object> mCurrentEvent;	@Override	public void onCreate(Bundle savedInstanceState) {		super.onCreate(savedInstanceState);		//获取UID		UID = getSharedPreferences("user", Context.MODE_PRIVATE).getString("uid", null);  //		mMapManager = ((TogetherApp) getApplication()).getMapManager();		setContentView(R.layout.follow_message);		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);		context = this;		initUI();		initMap();		//new Thread(new InitMap()).start();		locationClient=((TogetherApp)getApplication()).getLocationClient();		locationClient.registerLocationListener(new TogetherApp.MyLocationListener(mapView));		locationClient.setLocOption(getlocOption());	}	protected void onResume() {		super.onResume();		//TODO 将地图定位到当前event//		new LocateEvent().execute(null, null, null);		//从服务器获取所有event信息		new RequestAllEvents().execute(null, null, null);
 		//TODO 		new RequestFollowers().execute(null, null, null);		locationClient.start();	}	protected void  onPause() {		super.onPause();		locationClient.stop();	}	private void initUI() {		eid = (String) getIntent().getSerializableExtra("eid");		place = (String) getIntent().getSerializableExtra("place");		uid = (String) getIntent().getSerializableExtra("uid");		type = (String) getIntent().getSerializableExtra("type");		description = (String) getIntent().getSerializableExtra("description");		longitude = (String) getIntent().getSerializableExtra("longitude");		latitude = (String) getIntent().getSerializableExtra("latitude");		time = getIntent().getSerializableExtra("time").toString().substring(0, 5);		participate = (TextView) findViewById(R.id.participate);		message_in_follow = (TextView) findViewById(R.id.message_in_follow);		message_in_follow.setText("用户 " + uid + " 于 " + time + " 发起了" + "\n"								+ "活动 " + type + " ,  地点: " + place + "\n" 								+ "活动描述：" + description);		mapView = (MapView) findViewById(R.id.followmap);		btn1=(Button)findViewById(R.id.button1);		// 定位		btn1.setOnClickListener(new Button.OnClickListener(){			@Override			public void onClick(View arg0) {				locationClient.requestLocation();			}		});
 		
 		btn2=(Button)findViewById(R.id.button2);

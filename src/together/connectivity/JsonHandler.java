@@ -57,7 +57,7 @@ public class JsonHandler {
 		for (int i = 0; i < length; i++) {
 //			JSONObject object1 = array.getJSONObject(i);
 //			String obj2 = object1.getString("star");
-			JSONObject obj = new JSONObject(array.getJSONObject(i).getString("star"));
+//			JSONObject obj = new JSONObject(array.getJSONObject(i).getString("star"));
 			eMsg = new EventMsg();
 			//TODO 获取正确信息
 //			msg.setEvent(obj.getString("event"));
